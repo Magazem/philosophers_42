@@ -1,0 +1,3 @@
+/home/ysuliman/Cursus/philo2/build/CMakeFiles/philo2.dir
+/home/ysuliman/Cursus/philo2/build/CMakeFiles/edit_cache.dir
+/home/ysuliman/Cursus/philo2/build/CMakeFiles/rebuild_cache.dir

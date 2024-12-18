@@ -1,0 +1,32 @@
+[
+{
+  "directory": "/home/ysuliman/Cursus/philo2/build",
+  "command": "/usr/bin/gcc -g -std=gnu99 -o CMakeFiles/philo2.dir/init.c.o -c /home/ysuliman/Cursus/philo2/init.c",
+  "file": "/home/ysuliman/Cursus/philo2/init.c",
+  "output": "CMakeFiles/philo2.dir/init.c.o"
+},
+{
+  "directory": "/home/ysuliman/Cursus/philo2/build",
+  "command": "/usr/bin/gcc -g -std=gnu99 -o CMakeFiles/philo2.dir/philo.c.o -c /home/ysuliman/Cursus/philo2/philo.c",
+  "file": "/home/ysuliman/Cursus/philo2/philo.c",
+  "output": "CMakeFiles/philo2.dir/philo.c.o"
+},
+{
+  "directory": "/home/ysuliman/Cursus/philo2/build",
+  "command": "/usr/bin/gcc -g -std=gnu99 -o CMakeFiles/philo2.dir/utils.c.o -c /home/ysuliman/Cursus/philo2/utils.c",
+  "file": "/home/ysuliman/Cursus/philo2/utils.c",
+  "output": "CMakeFiles/philo2.dir/utils.c.o"
+},
+{
+  "directory": "/home/ysuliman/Cursus/philo2/build",
+  "command": "/usr/bin/gcc -g -std=gnu99 -o CMakeFiles/philo2.dir/check.c.o -c /home/ysuliman/Cursus/philo2/check.c",
+  "file": "/home/ysuliman/Cursus/philo2/check.c",
+  "output": "CMakeFiles/philo2.dir/check.c.o"
+},
+{
+  "directory": "/home/ysuliman/Cursus/philo2/build",
+  "command": "/usr/bin/gcc -g -std=gnu99 -o CMakeFiles/philo2.dir/routine.c.o -c /home/ysuliman/Cursus/philo2/routine.c",
+  "file": "/home/ysuliman/Cursus/philo2/routine.c",
+  "output": "CMakeFiles/philo2.dir/routine.c.o"
+}
+]
