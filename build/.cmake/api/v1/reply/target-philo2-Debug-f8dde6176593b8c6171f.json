@@ -69,6 +69,10 @@
 			{
 				"fragment" : "",
 				"role" : "flags"
+			},
+			{
+				"fragment" : "-Wl,--dependency-file,CMakeFiles/philo2.dir/link.d",
+				"role" : "flags"
 			}
 		],
 		"language" : "C"

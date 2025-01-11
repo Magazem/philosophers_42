@@ -29,5 +29,6 @@ long	ft_atol(const char *str);
 long	ft_get_time(void);
 int		ft_usleep(long int time);
 void	initiate_mutex(t_data *data);
+void	initiate_program(t_data *data);
 
 #endif

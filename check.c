@@ -14,7 +14,7 @@
 
 int	check_args(int argc, char *argv[])
 {
-	int i;
+	int	i;
 
 	i = 0;
 	if (argc == 5 || argc == 6)

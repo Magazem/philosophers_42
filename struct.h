@@ -25,6 +25,7 @@ typedef struct s_data
 	long			number_meals;
 	long			start_time;
 	int				ready;
+	int				over;
 	pthread_mutex_t	*forks;
 	pthread_mutex_t	*death;
 }					t_data;
