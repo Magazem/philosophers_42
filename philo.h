@@ -21,10 +21,15 @@
 # include <sys/time.h>
 # include <unistd.h>
 
+# define EAT "is eating"
+# define SLEEP "is sleeping"
+# define THINK "is thinking"
+# define FORK "has taken a fork"
+
 void	routine(void *arg);
-int		check_args(int argc, char **argv);
+int		check_args(int argc, char *argv[]);
 void	initiate_data(int argc, char **argv, t_data *data);
-void	error_manager(char *text);
+void	error_manager(char *text, t_philo *philo);
 long	ft_atol(const char *str);
 long	ft_get_time(void);
 int		ft_usleep(long int time);

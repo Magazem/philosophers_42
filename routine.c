@@ -19,16 +19,22 @@ void	print_routine(t_philo *philo, char *action)
 void	philo_eat(t_philo *philo)
 {
 	pthread_mutex_lock(philo->left_fork);
-	print_routine(philo, L_FORK);
+	print_routine(philo, FORK);
 	pthread_mutex_lock(philo->right_fork);
-	print_routine(philo, R_FORK);
+	print_routine(philo, FORK);
+	philo->last_meal = ft_get_time();
 	ft_usleep(philo->data->time_to_eat);
+	print_routine(philo, EAT);
+	philo->eat_count++;
 	pthread_mutex_unlock(philo->left_fork);
 	pthread_mutex_unlock(philo->right_fork);
 }
 
 void	philo_sleep_think(t_philo *philo)
 {
+	ft_usleep(philo->data->time_to_sleep);
+	print_routine(philo, SLEEP);
+	print_routine(philo, THINK);
 }
 
 void	routine(void *arg)

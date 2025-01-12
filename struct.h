@@ -35,7 +35,7 @@ typedef struct s_philo
 	pthread_t		*tid;
 	int				id;
 	int				dead;
-	int				last_meal;
+	long			last_meal;
 	int				eat_count;
 	pthread_mutex_t	*left_fork;
 	pthread_mutex_t	*right_fork;

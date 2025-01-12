@@ -18,15 +18,15 @@ void	initiate_mutex(t_data *data)
 
 	data->death = malloc(sizeof(pthread_mutex_t));
 	if (!data->death)
-		return (error_manager("death Malloc failed"));
+		return (error_manager("death Malloc failed", NULL));
 	data->forks = malloc(sizeof(pthread_mutex_t) * data->num_philos);
 	i = 0;
 	if (pthread_mutex_init(data->death, NULL) == -1)
-		return (error_manager("death mutex init failed"));
+		return (error_manager("death mutex init failed", NULL));
 	while (i < data->num_philos)
 	{
 		if (pthread_mutex_init(&data->forks[i++], NULL) == -1)
-			return (error_manager("fork mutex init failed"));
+			return (error_manager("fork mutex init failed", NULL));
 	}
 }
 
