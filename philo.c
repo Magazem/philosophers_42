@@ -23,3 +23,25 @@ int	main(int ac, char **av)
 	}
 	return (0);
 }
+void	monitor(t_philo *philo)
+{
+	
+}
+void	threads_end(t_philo *philo)
+{
+	long num_philos;
+	long i;
+
+	i = 0;
+	num_philos = philo->data->num_philos;
+	while (i < num_philos)
+	{
+		pthread_join(philo[i].tid, (void *)&philo[i]);
+		i++;
+	}
+	pthread_mutexattr_destroy(philo->data->forks);
+	pthread_mutexattr_destroy(philo->data->death);
+	free(philo->data->death);
+	free(philo->data->forks);
+	free(philo);
+}

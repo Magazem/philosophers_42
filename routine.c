@@ -14,6 +14,14 @@
 
 void	print_routine(t_philo *philo, char *action)
 {
+	pthread_mutex_lock(philo->data->death);
+	if (philo->data->over)
+	{
+		pthread_mutex_unlock(philo->data->death);
+		return ;
+	}
+	printf(" ● %ldms %d %s", ft_get_time() - philo->data->start_time, philo->id, action);
+	pthread_mutex_unlock(philo->data->death);
 }
 
 void	philo_eat(t_philo *philo)

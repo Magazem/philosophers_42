@@ -21,10 +21,11 @@
 # include <sys/time.h>
 # include <unistd.h>
 
+# define FORK "has taken a fork"
 # define EAT "is eating"
 # define SLEEP "is sleeping"
 # define THINK "is thinking"
-# define FORK "has taken a fork"
+# define DEAD "died"
 
 void	routine(void *arg);
 int		check_args(int argc, char *argv[]);
