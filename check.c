@@ -16,15 +16,16 @@ int	check_args(int argc, char *argv[])
 {
 	int	i;
 
-	i = 0;
+	i = 2;
 	if (argc == 5 || argc == 6)
 	{
 		if (ft_atol(argv[1]) <= 0)
 			return (printf("needs one philosopher at least"), 0);
-		while (i++ < argc)
+		while (i < argc)
 		{
 			if (ft_atol(argv[i]) <= 0)
 				return (printf("value can't be smaller or equal to zero"), 0);
+			i++;
 		}
 	}
 	else

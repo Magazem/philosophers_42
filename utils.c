@@ -36,9 +36,8 @@ void	error_manager(char *text, t_philo *philo)
 			free(philo[i].right_fork);
 		}
 		while (i < num)
-			free(philo[i++]);
+			free(&philo[i++]);
 	}
-	return (0);
 }
 
 long	ft_get_time(void)
@@ -75,8 +74,8 @@ int	ft_usleep(long int time)
 {
 	long int	start_time;
 
-	start_time = get_time();
-	while ((get_time() - start_time) < time)
+	start_time = ft_get_time();
+	while ((ft_get_time() - start_time) < time)
 		usleep(150);
 	return (1);
 }

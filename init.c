@@ -67,6 +67,15 @@ void	initiate_threads(t_philo *philo)
 	i = 0;
 	while (i < philo->data->num_philos)
 		pthread_create(philo[i++].tid, NULL, &routine, philo);
+	i = -1;
+	philo->data->start_time = ft_get_time();
+	while (++i < philo->data->num_philos)
+	{
+		philo[i].thread_start = philo->data->start_time;
+		philo[i].last_meal = philo->data->start_time;
+	}
+	philo->data->over = 0;
+	philo->data->ready = 1;
 }
 
 void	initiate_program(t_data *data)
