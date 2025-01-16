@@ -14,10 +14,7 @@
 
 void	print_routine(t_philo *philo, char *action)
 {
-	pthread_t	tid;
-	philo->tid = malloc(sizeof(pthread_t));
 	pthread_mutex_lock(philo->data->death);
-	pthread_create(&tid, NULL, monitor, philo);
 	if (philo->data->over)
 	{
 		pthread_mutex_unlock(philo->data->death);

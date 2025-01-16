@@ -41,7 +41,7 @@ void	threads_end(t_philo *philo)
 	}
 	pthread_mutex_destroy(philo->data->forks);
 	pthread_mutex_destroy(philo->data->death);
-	free(philo->data->death);
+	 free(philo->data->death);
 	free(philo->data->forks);
 	free(philo);
 }
