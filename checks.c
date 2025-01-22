@@ -33,8 +33,11 @@ int	check_dead(t_philo *philo)
 	i = 0;
 	while (i < philo->data->num_philos)
 	{
-		if ((ft_get_time() - philo[i].last_meal) <= philo->data->time_to_die)
+		if ((ft_get_time() - philo[i].last_meal) > philo->data->time_to_die)
+		{
+			printf("%d died\n", philo[i].id);
 			return (1);
+		}
 		i++;
 	}
 	return (0);
@@ -43,7 +46,7 @@ void	check_over(t_philo *philo)
 {
 	while (!philo->data->over)
 	{
-		if (check_meals(philo) && check_dead(philo))
+		if (check_meals(philo) || check_dead(philo))
 			philo->data->over = 1;
 	}
 }

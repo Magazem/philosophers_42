@@ -41,3 +41,13 @@ long	ft_atol(const char *str)
 		result = result * 10 + (str[i++] - '0');
 	return (sign * result);
 }
+
+int	ft_usleep(long time)
+{
+	long	start_time;
+
+	start_time = ft_get_time();
+	while ((ft_get_time() - start_time) < time)
+		usleep(150);
+	return (1);
+}

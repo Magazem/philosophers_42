@@ -24,6 +24,7 @@ typedef struct s_data
 	int				ready;
 	int				over;
 	pthread_mutex_t	*lock;
+	pthread_mutex_t	*forks;
 }					t_data;
 
 typedef struct s_philo
@@ -34,6 +35,8 @@ typedef struct s_philo
 	int				id;
 	int				dead;
 	t_data			*data;
+	pthread_mutex_t	*left_fork;
+	pthread_mutex_t	*right_fork;
 }					t_philo;
 
 #endif
