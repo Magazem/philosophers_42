@@ -23,7 +23,9 @@ typedef struct s_data
 	long			start_time;
 	int				ready;
 	int				over;
+	long			full;
 	pthread_mutex_t	*lock;
+	pthread_mutex_t	*meals;
 	pthread_mutex_t	*forks;
 }					t_data;
 

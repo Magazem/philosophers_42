@@ -7,7 +7,7 @@ NAME = philo
 
 cc = gcc
 RM = rm -f
-CFLAGS = -Wall -Werror -Wextra -pthread
+CFLAGS = -Wall -Werror -Wextra -pthread -g
 
 #Colors
 GREEN		= \033[0;32m

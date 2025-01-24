@@ -15,6 +15,11 @@
 void	print_routine(t_philo *philo, char *action)
 {
 	pthread_mutex_lock(philo->data->lock);
+	if (philo->data->over)
+	{
+		pthread_mutex_unlock(philo->data->lock);
+		return ;
+	}
 	printf("%ld %d %s\n", ft_get_time() - philo->data->start_time, philo->id,
 		action);
 	pthread_mutex_unlock(philo->data->lock);
@@ -34,6 +39,12 @@ void	eat(t_philo *philo)
 	pthread_mutex_lock(philo->right_fork);
 	print_routine(philo, FORK);
 	philo->meal_count++;
+	if (philo->meal_count == philo->data->number_meals)
+	{
+		pthread_mutex_lock(philo->data->meals);
+		philo->data->full++;
+		pthread_mutex_unlock(philo->data->meals);
+	}
 	philo->last_meal = ft_get_time();
 	print_routine(philo, EAT);
 	ft_usleep(philo->data->time_to_eat);
@@ -50,9 +61,10 @@ void	*routine(void *arg)
 		continue ;
 	if (philo->id & 1)
 		ft_usleep(philo->data->time_to_eat * 0.9 + 1);
-	while (1)
+	while (!philo->data->over)
 	{
 		eat(philo);
 		sleep_think(philo);
 	}
+	return ((void *)0);
 }

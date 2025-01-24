@@ -19,7 +19,7 @@ int	check_meals(t_philo *philo)
 	i = 0;
 	while (i < philo->data->num_philos)
 	{
-		if (philo[i].meal_count == philo->data->number_meals)
+		if (philo->data->full == philo->data->num_philos)
 			return (1);
 		i++;
 	}
@@ -35,7 +35,8 @@ int	check_dead(t_philo *philo)
 	{
 		if ((ft_get_time() - philo[i].last_meal) > philo->data->time_to_die)
 		{
-			printf("%d died\n", philo[i].id);
+			printf("%ld %d %s\n", ft_get_time() - philo->data->start_time,
+				philo[i].id, DEAD);
 			return (1);
 		}
 		i++;
