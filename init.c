@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysuliman <marvin@42.fr>                    #+#  +:+       +#+        */
+/*   By: ysuliman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-01-16 13:47:14 by ysuliman          #+#    #+#             */
-/*   Updated: 2025-01-16 13:47:14 by ysuliman         ###   ########.fr       */
+/*   Created: 2025/01/16 13:47:14 by ysuliman          #+#    #+#             */
+/*   Updated: 2025/03/26 08:13:34 by ysuliman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,5 +87,6 @@ void	initiate_philo(t_data *data)
 	philo = malloc(sizeof(t_philo) * data->num_philos);
 	init_philos(data, philo);
 	check_over(philo);
-	over(philo);
+	if (philo->data->num_philos > 1)
+		over(philo);
 }

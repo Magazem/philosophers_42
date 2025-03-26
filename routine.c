@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   routine.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysuliman <marvin@42.fr>                    #+#  +:+       +#+        */
+/*   By: ysuliman <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025-01-16 16:05:51 by ysuliman          #+#    #+#             */
-/*   Updated: 2025-01-16 16:05:51 by ysuliman         ###   ########.fr       */
+/*   Created: 2025/01/16 16:05:51 by ysuliman          #+#    #+#             */
+/*   Updated: 2025/03/26 08:11:40 by ysuliman         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	print_routine(t_philo *philo, char *action)
 	if (philo->data->over)
 	{
 		pthread_mutex_unlock(philo->data->lock);
-		return ;
+		pthread_exit(NULL);
 	}
 	printf("%ld %d %s\n", ft_get_time() - philo->data->start_time, philo->id,
 		action);
